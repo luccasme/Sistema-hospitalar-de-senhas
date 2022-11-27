@@ -1,0 +1,117 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.fullPainel {
+    margin: 1rem 0.5rem 1rem 1rem;
+    padding: .5rem;
+    background-image: linear-gradient(to right top, #012677, #005bc5, #acc2e8 );
+    border-radius: 7px;
+}
+
+.main {
+    background-color: #acc2e8;
+    display: flex;
+    flex-direction: row;
+    height: 350PX;
+    font-size: 2rem;
+    border: 3px solid #fff;
+    border-bottom: none;
+    border-top: none;
+}
+
+.titulo {
+    border: 3px solid #fff;
+    border-radius: 5px;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    font-family:Arial, Helvetica, sans-serif ;
+    font-size: 2rem;
+    text-align: center;
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.nome,
+.senha {
+    border: 1px solid;
+    border-radius: 5px;
+    font-weight:500;
+    margin: 0.5rem;
+    padding: 0.5rem;;
+    width: 100%;    
+}
+
+.painelSenha {
+    background-color: #acc2e8;
+    display: flex;
+    flex-direction: row;
+    height: 350PX;
+    font-size: 2rem;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border: 3px solid #fff;
+    border-top: none; 
+}
+
+.idsenha {
+    border: 1px solid;
+    border-radius: 5px;
+    font-weight: 500;
+    margin: 0.5rem;
+    padding: 0.5rem;;
+    width: 100%;   
+}
+
+.propaganda {
+    background-image: linear-gradient(to right top, #012677, #005bc5, #acc2e8 );
+    padding: 1rem;
+    margin: 1rem 1rem 1rem 0;
+    border: 1px solid #000000;
+    border-radius: 5px;
+   
+    padding-top: 50px;
+}
+.propaganda > h1, p {
+    color: #fff;
+    text-align: center;
+    
+}
+.Hname {
+    padding: 1rem;
+    font-size: 40PX;
+}
+
+.button {
+    margin-bottom: 1rem;
+    padding: 0 0 0 1rem;
+    text-align: center;
+}
+
+.newSenha {
+    margin-left: center;
+    padding: 1rem;
+    box-shadow: 0px 0px 0px 2px #d7dff2;
+	background-color:#acc2e8;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	cursor:pointer;
+	color:#000000;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+	font-size:19px;
+	padding:12px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #96b0f2;
+}
+
+.newSenha:hover {
+	background-color:#476e9e;
+}
+
+.newSenha:active {
+	position: relative;
+	top:1px;
+}
