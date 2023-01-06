@@ -13,23 +13,28 @@
         <div = class="fullPainel" >
             <H1 class="titulo">AGUARDE! LOGO VOCÊ SERÁ CHAMADO PELO NÚMERO DE SUA SENHA.</H1>
             <ol class="main">
-                <div id="senha" class="senha">SENHA:</div>
+                <div class="senha"> SENHA:
+                    <h2 id="senha" class="styleSenha"></h2>
+                </div>
                 <div id="nome" class="nome">CONSULTÓRIO:</div>
             </ol>
             <div class="painelSenha">
-                <div id="senhaAtual" class="idsenha">EM ATENDIMENTO:</div>
+                <div id="senhaAtual" class="idsenha">SENHAS CHAMADAS:</div>
             </div>
         </div>
         <div class="propaganda">
             <h1 class="Hname">HOSPITAL NOVA ERA</h3>
-            <img src="assets/img/add.jpg">
+            <img class="img" src="assets/img/add.jpg">
             <h1>Agradecemos a preferência.</h1>
             <p>Seu bem-estar é nossa alegria!</p>
         </div>
     </section>
-    <div class="button">
-        <button id="novaSenha" class="newSenha">GERAR NOVA SENHA</button>
+    <div class="cadastro">
+        <input id="Name" type="text" placeholder="NOME DO PACIENTE" class="name">
+        <button onclick="novasenha()"' id="novaSenha" class="newSenha">GERAR NOVA SENHA</button>
     </div>
     
+    <script src="./assets/js/main.js"></script>
 </body>
+
 </html>

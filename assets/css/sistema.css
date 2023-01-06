@@ -2,14 +2,16 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-top: 5rem;
     
 }
 
 .fullPainel {
-    margin: 1rem 0.5rem 1rem 1rem;
+    margin: 1rem 0.5rem .5rem 1rem;
     padding: .5rem;
     background-image: linear-gradient(to right top, #012677, #005bc5, #acc2e8 );
-    border-radius: 7px;
+    border-radius: 6px;
+    box-shadow: 0 0 20px;
 }
 
 .main {
@@ -33,16 +35,25 @@
     border-bottom: none;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    background-color: #acc2e8;
 }
-
 .nome,
 .senha {
-    border: 1px solid;
+    
     border-radius: 5px;
     font-weight:500;
     margin: 0.5rem;
     padding: 0.5rem;;
-    width: 100%;    
+    width: 100%;  
+    background-color: #fff;  
+}
+
+.styleSenha {
+    background-color: #fff;
+    text-align: center;
+    padding-top: 3.5rem;
+    font-size: 80px;
+    color:#001aff
 }
 
 .painelSenha {
@@ -58,36 +69,58 @@
 }
 
 .idsenha {
-    border: 1px solid;
+    
     border-radius: 5px;
     font-weight: 500;
     margin: 0.5rem;
     padding: 0.5rem;;
     width: 100%;   
+    background-color:#fff;
 }
 
 .propaganda {
-    background-image: linear-gradient(to right top, #012677, #005bc5, #acc2e8 );
     padding: 1rem;
-    margin: 1rem 1rem 1rem 0;
-    border: 1px solid #000000;
+    margin: 1rem 1rem .5rem 0;
     border-radius: 5px;
-   
     padding-top: 50px;
+    background-image: linear-gradient(to right top, #012677, #005bc5, #acc2e8 );
+    box-shadow: 0 0 20px;
+
 }
 .propaganda > h1, p {
     color: #fff;
     text-align: center;
+    background-color: transparent;
     
 }
 .Hname {
     padding: 1rem;
     font-size: 40PX;
 }
+.img {
+    border-radius: 6px;
+}
+.cadastro {
+    text-align: center;
+}
+
+.name {
+    margin: 0 0 .5rem 0;
+    width: 400px;
+    height: 50px;
+    border-radius: .5rem;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 0 2px #fff;
+    background-color: #fff;
+    border: inset;
+    margin: 5px;
+}
 
 .button {
     margin-bottom: 1rem;
-    padding: 0 0 0 1rem;
+    padding: 5px;
     text-align: center;
 }
 
