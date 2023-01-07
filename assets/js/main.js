@@ -16,15 +16,15 @@ if (!ultSenha)
 mostrarSenha();
 
 window.addEventListener('keydown', function(e){
-    if (e.key == 'n' || e.key == 'N') {
+    if (e.key == 'F1') {
         senhaNormal++;
         ultSenha = 'N'
         audio.play();
-    } else if (e.key == 'p' || e.key == 'P') {
+    } else if (e.key == 'F2') {
         senhaPreferencial++;
         ultSenha = 'P'
         audio.play();
-    } else if (e.key == 'r' || e.key == 'R') {
+    } else if (e.key == 'F3') {
         senhaNormal = 0;
         senhaPreferencial = 0;
         ultSenha = 'N';
@@ -44,4 +44,18 @@ function mostrarSenha() {
     } else {
         vSenha.innerHTML = 'P' + parseInt(senhaPreferencial).toLocaleString('pt-br', {minimumIntegerDigits:3})
     }
+}
+
+const btn = document.getElementById("Name");
+btn.addEventListener('click', function(e){
+    e.preventDefault();
+    console.log(btn);
+})
+
+
+
+function mostrarNome() {
+    const name = document.getElementById('Name').value;
+    document.getElementById('nome').innerHTML = `${name}`;
+    console.log(name);
 }

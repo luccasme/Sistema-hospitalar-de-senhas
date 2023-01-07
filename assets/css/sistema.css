@@ -11,7 +11,7 @@
     padding: .5rem;
     background-image: linear-gradient(to right top, #012677, #005bc5, #acc2e8 );
     border-radius: 6px;
-    box-shadow: 0 0 20px;
+    
 }
 
 .main {
@@ -55,6 +55,11 @@
     font-size: 80px;
     color:#001aff
 }
+.styleNome {
+    background-color: #fff;
+    text-align: center;
+    color:#001aff
+}
 
 .painelSenha {
     background-color: #acc2e8;
@@ -84,7 +89,7 @@
     border-radius: 5px;
     padding-top: 50px;
     background-image: linear-gradient(to right top, #012677, #005bc5, #acc2e8 );
-    box-shadow: 0 0 20px;
+    
 
 }
 .propaganda > h1, p {
