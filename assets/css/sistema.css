@@ -10,7 +10,7 @@
     margin: 1rem 0.5rem .5rem 1rem;
     padding: .5rem;
     background-image: linear-gradient(to right top, #012677, #005bc5, #acc2e8 );
-    border-radius: 6px;
+    border-radius: 8px;
     
 }
 
@@ -56,7 +56,7 @@
     color:#001aff
 }
 .styleNome {
-    background-color: #fff;
+    background-color:transparent;
     text-align: center;
     color:#001aff
 }
@@ -86,7 +86,7 @@
 .propaganda {
     padding: 1rem;
     margin: 1rem 1rem .5rem 0;
-    border-radius: 5px;
+    border-radius: 8px;
     padding-top: 50px;
     background-image: linear-gradient(to right top, #012677, #005bc5, #acc2e8 );
     
@@ -130,7 +130,7 @@
 }
 
 .newSenha {
-    margin-left: center;
+    margin: 5px;
     padding: 1rem;
     box-shadow: 0px 0px 0px 2px #d7dff2;
 	background-color:#acc2e8;
@@ -146,7 +146,7 @@
 }
 
 .newSenha:hover {
-	background-color:#476e9e;
+	background-color:#3968a1;
 }
 
 .newSenha:active {

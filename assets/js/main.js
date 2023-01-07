@@ -1,7 +1,7 @@
 const vSenha = document.getElementById('senha');
-let senhaNormal = localStorage.getItem('senhaNormal');
-let senhaPreferencial = localStorage.getItem('senhaPreferencial');
-let ultSenha = localStorage.getItem('ultSenha');
+let senhaNormal = 0;
+let senhaPreferencial = 0;
+let ultSenha = 0;
 let audio = new Audio('./audio/senha.mp3');
 
 if (!senhaNormal)
@@ -15,28 +15,31 @@ if (!ultSenha)
 
 mostrarSenha();
 
-window.addEventListener('keydown', function(e){
-    if (e.key == 'F1') {
-        senhaNormal++;
-        ultSenha = 'N'
-        audio.play();
-    } else if (e.key == 'F2') {
-        senhaPreferencial++;
-        ultSenha = 'P'
-        audio.play();
-    } else if (e.key == 'F3') {
-        senhaNormal = 0;
-        senhaPreferencial = 0;
-        ultSenha = 'N';
-
-    }
-
-    localStorage.getItem('senhaNormal', senhaNormal);
-    localStorage.getItem('senhaPreferencial', senhaPreferencial);
-    localStorage.getItem('ultSenha', ultSenha);
-
-    mostrarSenha();
+const btn = document.getElementById("Name");
+btn.addEventListener('click', function(e){
+    e.preventDefault();
+    
 })
+
+function sNormal() {
+    const name = document.getElementById('Name').value;
+    document.getElementById('nome').innerHTML = `${name}`; 
+    ultSenha = 'N';
+    senhaNormal++;
+    audio.play(); 
+    mostrarSenha();
+}
+
+function sPreferencial() {
+    const sPref = document.getElementById('Name').value;
+    document.getElementById('nome').innerHTML = `${sPref}`;
+    ultSenha = 'P';
+    senhaPreferencial++;
+    audio.play()
+    mostrarSenha();
+}
+
+
 
 function mostrarSenha() {
     if (ultSenha=='N'){
@@ -46,16 +49,3 @@ function mostrarSenha() {
     }
 }
 
-const btn = document.getElementById("Name");
-btn.addEventListener('click', function(e){
-    e.preventDefault();
-    console.log(btn);
-})
-
-
-
-function mostrarNome() {
-    const name = document.getElementById('Name').value;
-    document.getElementById('nome').innerHTML = `${name}`;
-    console.log(name);
-}
