@@ -43,9 +43,9 @@ function sNormal() {
     mostrarSenha();
 
     if (consultorios.length > 0) {
-        consult.innerHTML += `${consultorios.shift()}`
+        consult.innerHTML = `${consultorios.shift()}`
     } else {
-        consult.innerHTML += `Consultórios ocupados!`
+        consult.innerHTML = `Consultórios ocupados!`
     }
 }
 
@@ -59,9 +59,9 @@ function sPreferencial() {
     mostrarSenha();
 
     if (consultorios.length > 0) {
-        consult.innerHTML += `${consultorios.shift()}`
+        consult.innerHTML = `${consultorios.shift()}`
     } else {
-        consult.innerHTML += `Consultórios ocupados!`
+        consult.innerHTML = `Consultórios ocupados!`
     }
 }
 
