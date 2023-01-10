@@ -61,7 +61,7 @@
     color:#001aff
 }
 
-.ultSenhas {
+#ultSenhas {
     background-color: transparent;
     color: #001aff;
     padding-left: 1rem;
@@ -141,7 +141,7 @@
 .newSenha {
     margin: 5px;
     padding: 1rem;
-	background-color: #005bc5;
+	background-color: #0a4ea1;
 	border-radius:10px;
 	cursor:pointer;
 	color:#ffffff;
@@ -149,13 +149,13 @@
 	font-size:19px;
 	padding:12px 37px;
 	text-decoration:none;
-	text-shadow:1px 5px 5px #070707;
-    font-weight: bolder;
+	text-shadow:1px 1px 10px #070707;
+    font-weight: 400;
     
 }
 
 .newSenha:hover {
-	background-color:#c4cedb;
+	background-color:#022551;
 }
 
 .newSenha:active {

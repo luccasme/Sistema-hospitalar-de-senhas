@@ -7,7 +7,34 @@ let senhas = document.getElementById('ultSenhas');
 let senhasChamadas = [];
 let consult = document.getElementById('consultorio');
 let consultorios = [];
-let pacientes = [];
+let db_paciente_normal = {}
+let db_paciente_pref = {}
+
+//-----------------------------------------------------------------------------------
+// Data e hora
+let data = new Date();
+let dia = data.getDate().toString().padStart(2, '0');
+let mes = (data.getMonth() + 1).toString().padStart(2, '0');
+let ano = data.getFullYear();
+let hora = data.getHours().toString().padStart(2, '0');
+let minuto = data.getMinutes().toString().padStart(2, '0');
+let segundo = data.getSeconds().toString().padStart(2, '0');
+
+let dataAtual = `${dia}/${mes}/${ano}`;
+let horaAtual = `${hora}:${minuto}:${segundo}`;
+
+//-----------------------------------------------------------------------------------
+
+
+for (let i = 0; i < db_paciente_normal.length; i++) {
+    db_pacientes.push(i);
+    
+}
+for (let i = 0; i < db_paciente_pref.length; i++) {
+    db_pacientes.push(i);
+    
+}
+
 
 
 for (let i = 1; i < 6; i++) {
@@ -37,16 +64,19 @@ function sNormal() {
     const name = document.getElementById('Name').value;
     document.getElementById('nome').innerHTML = `${name}`;
     
+
     ultSenha = 'N';
     senhaNormal++;
     audio.play(); 
     mostrarSenha();
-
     if (consultorios.length > 0) {
         consult.innerHTML = `${consultorios.shift()}`
+        
     } else {
         consult.innerHTML = `Consultórios ocupados!`
     }
+    db_normal(`${senhaNormal}`, `${name}`, `${consult.innerHTML}`, `${ultSenha}`, `${dataAtual}`, `${horaAtual}`)
+    console.log(db_paciente_normal);
 }
 
 // função de chamada de senha preferencial
@@ -63,6 +93,10 @@ function sPreferencial() {
     } else {
         consult.innerHTML = `Consultórios ocupados!`
     }
+    db_prefencial(`${senhaPreferencial}`, `${sPref}`, `${consult.innerHTML}`, `${ultSenha}`, `${dataAtual}`, `${horaAtual}`)
+    console.log(db_paciente_pref);
+
+    
 }
 
 // função de vizualização de senhas
@@ -80,3 +114,31 @@ function mostrarSenha() {
     console.log(`${senhasChamadas}`);
 }
 
+
+// funções de adição de pacientes ao banco de dados
+function db_normal (senha, nome, consultorio, tipo, data, hora) {
+    db_paciente_normal[senha] = {
+        nome: nome,
+        consultorio: consultorio,
+        tipo: tipo,
+        data: data,
+        hora: hora
+    }
+}
+function db_prefencial (senha, nome, consultorio, tipo, data, hora) {
+    db_paciente_pref[senha] = {
+        nome: nome,
+        consultorio: consultorio,
+        tipo: tipo,
+        data: data,
+        hora: hora
+    }
+}
+
+// consultar pacientes pelo número da senha
+function get_db_normal(senha) {
+    return db_paciente_normal[senha];
+}
+function get_db_pref(senha) {
+    return db_paciente_pref[senha];
+}
