@@ -7,8 +7,17 @@ let senhas = document.getElementById('ultSenhas');
 let senhasChamadas = [];
 let consult = document.getElementById('consultorio');
 let consultorios = [];
-let db_paciente_normal = {}
-let db_paciente_pref = {}
+let db_paciente_normal = {};
+let db_paciente_pref = {};
+let db_pacientes = {
+    senhaNormal: localStorage.getItem("senhaNormal"),
+    db_paciente_normal: JSON.parse(localStorage.getItem("db_paciente_normal")),
+    senhaPreferencial: localStorage.getItem("senhaPreferencial"),
+    db_paciente_pref: JSON.parse(localStorage.getItem("db_paciente_pref"))
+};
+
+
+
 
 //-----------------------------------------------------------------------------------
 // Data e hora
@@ -22,20 +31,14 @@ let segundo = data.getSeconds().toString().padStart(2, '0');
 
 let dataAtual = `${dia}/${mes}/${ano}`;
 let horaAtual = `${hora}:${minuto}:${segundo}`;
-
 //-----------------------------------------------------------------------------------
 
-
 for (let i = 0; i < db_paciente_normal.length; i++) {
-    db_pacientes.push(i);
-    
+    db_paciente_normal.push(i); 
 }
 for (let i = 0; i < db_paciente_pref.length; i++) {
-    db_pacientes.push(i);
-    
+    db_paciente_pref.push(i);  
 }
-
-
 
 for (let i = 1; i < 6; i++) {
     consultorios.push(i);
@@ -75,8 +78,18 @@ function sNormal() {
     } else {
         consult.innerHTML = `Consultórios ocupados!`
     }
-    db_normal(`${senhaNormal}`, `${name}`, `${consult.innerHTML}`, `${ultSenha}`, `${dataAtual}`, `${horaAtual}`)
+    db_normal(
+        `${senhaNormal}`, 
+        `${name}`,
+        `${consult.innerHTML}`, 
+        `${ultSenha}`, 
+        `${dataAtual}`, 
+        `${horaAtual}`)
     console.log(db_paciente_normal);
+
+    // Armazenamento local
+    localStorage.setItem("senhaNormal", senhaNormal);
+    localStorage.setItem("db_paciente_normal", JSON.stringify(db_paciente_normal));
 }
 
 // função de chamada de senha preferencial
@@ -93,10 +106,19 @@ function sPreferencial() {
     } else {
         consult.innerHTML = `Consultórios ocupados!`
     }
-    db_prefencial(`${senhaPreferencial}`, `${sPref}`, `${consult.innerHTML}`, `${ultSenha}`, `${dataAtual}`, `${horaAtual}`)
+    db_prefencial(
+        `${senhaPreferencial}`,
+        `${sPref}`, 
+        `${consult.innerHTML}`, 
+        `${ultSenha}`, 
+        `${dataAtual}`, 
+        `${horaAtual}`)
     console.log(db_paciente_pref);
 
-    
+    // Armazenamento local
+    localStorage.setItem("senhaPref", senhaPreferencial);
+    localStorage.setItem("db_paciente_pref", JSON.stringify(db_paciente_pref));
+  
 }
 
 // função de vizualização de senhas
@@ -117,8 +139,8 @@ function mostrarSenha() {
 
 // funções de adição de pacientes ao banco de dados
 function db_normal (senha, nome, consultorio, tipo, data, hora) {
-    db_paciente_normal[senha] = {
-        nome: nome,
+    db_paciente_normal[nome] = {
+        senha: senha,
         consultorio: consultorio,
         tipo: tipo,
         data: data,
@@ -126,8 +148,8 @@ function db_normal (senha, nome, consultorio, tipo, data, hora) {
     }
 }
 function db_prefencial (senha, nome, consultorio, tipo, data, hora) {
-    db_paciente_pref[senha] = {
-        nome: nome,
+    db_paciente_pref[nome] = {
+        senha: senha,
         consultorio: consultorio,
         tipo: tipo,
         data: data,
@@ -136,9 +158,13 @@ function db_prefencial (senha, nome, consultorio, tipo, data, hora) {
 }
 
 // consultar pacientes pelo número da senha
-function get_db_normal(senha) {
-    return db_paciente_normal[senha];
+function get_db_normal() {
+    return db_paciente_normal;
 }
-function get_db_pref(senha) {
-    return db_paciente_pref[senha];
+function get_db_pref() {
+    return db_paciente_pref;
 }
+function get_db_pacientes() {
+    console.log(db_pacientes);
+}
+
