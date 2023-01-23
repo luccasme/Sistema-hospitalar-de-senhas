@@ -1,118 +1,80 @@
 .content {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 5rem;
-    
+    justify-content:left;
+    align-content: center;
+    margin: .2rem;
 }
 
 .fullPainel {
-    margin: 1rem 0.5rem .5rem 1rem;
-    padding: .5rem;
-    background-image: linear-gradient(to right top, #012677, #005bc5, #acc2e8 );
-    border-radius: 8px;
-    
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
 }
 
-.main {
-    background-color: #acc2e8;
+.final {
     display: flex;
     flex-direction: row;
-    height: 350PX;
-    font-size: 2rem;
-    border: 3px solid #fff;
-    border-bottom: none;
-    border-top: none;
-}
-
-.titulo {
-    border: 3px solid #fff;
-    border-radius: 5px;
-    padding: 1rem 0.5rem 1rem 0.5rem;
-    font-family:Arial, Helvetica, sans-serif ;
-    font-size: 2rem;
-    text-align: center;
-    border-bottom: none;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    background-color: #acc2e8;
-}
-.nome,
-.senha {
-    
-    border-radius: 5px;
-    font-weight:500;
-    margin: 0.5rem;
-    padding: 0.5rem;;
-    width: 100%;  
-    background-color: #fff;  
-}
-.consultorio,
-.styleSenha {
-    background-color: #fff;
-    text-align: center;
-    padding-top: 3.5rem;
-    font-size: 80px;
-    color:#001aff
-}
-.styleNome {
-    background-color:transparent;
-    text-align: center;
-    color:#001aff
-}
-
-#ultSenhas {
+    justify-content: space-evenly;
+    align-items: center;
     background-color: transparent;
-    color: #001aff;
-    padding-left: 1rem;
-    font-size: 40px;
-    margin: .5rem;
+    margin: 0;  
 }
-
-.painelSenha {
-    background-color: #acc2e8;
-    display: flex;
-    flex-direction: row;
-    height: 350PX;
-    font-size: 2rem;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border: 3px solid #fff;
-    border-top: none; 
-}
-
-.idsenha {
+.relogio,
+.msg,
+.dot {
+    background-color: transparent;
+    font-size: 35px;
     
+    color: #fff;
+    
+}
+
+.caixa{
+    height: 250px;
+    width: 400px;
     border-radius: 5px;
-    font-weight: 500;
-    margin: 0.5rem;
-    padding: 0.5rem;;
-    width: 100%;   
-    background-color:#fff;
+    border-bottom: 1px solid #fff;
+    background-color: sienna;
+    font-size: 35px;
+    padding-left: .5rem;
+    color: #fff;
+    font-weight: 400;
+    
+    
+}
+.font {
+    font-size: 30px;
+    background-color: transparent;
+    font-weight: 400;
+   
 }
 
 .propaganda {
-    padding: 1rem;
-    margin: 1rem 1rem .5rem 0;
-    border-radius: 8px;
-    padding-top: 50px;
+    width: 100vw;
+    height: 750px;
+    border-radius: 3px;
     background-image: linear-gradient(to right top, #012677, #005bc5, #acc2e8 );
-    
-
+    display: flex;
+    flex-direction: column;
 }
+.img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    left: 50%;
+    height: 500px;
+    width: 750px;
+}
+
 .propaganda > h1, p {
     color: #fff;
     text-align: center;
-    background-color: transparent;
+    background-color: transparent;  
+    font-weight: 400;
     
 }
-.Hname {
-    padding: 1rem;
-    font-size: 40PX;
-}
-.img {
-    border-radius: 6px;
-}
+
+
 .cadastro {
     text-align: center; 
     padding: 0 0 1rem 0;

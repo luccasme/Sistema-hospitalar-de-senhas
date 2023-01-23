@@ -9,28 +9,19 @@ let consult = document.getElementById('consultorio');
 let consultorios = [];
 let db_paciente_normal = {};
 let db_paciente_pref = {};
-let db_pacientes = {
-    senhaNormal: localStorage.getItem("senhaNormal"),
-    db_paciente_normal: JSON.parse(localStorage.getItem("db_paciente_normal")),
-    senhaPreferencial: localStorage.getItem("senhaPreferencial"),
-    db_paciente_pref: JSON.parse(localStorage.getItem("db_paciente_pref"))
-};
-
-
+let db_pacientes = {db_paciente_normal, db_paciente_pref};
 
 
 //-----------------------------------------------------------------------------------
 // Data e hora
-let data = new Date();
-let dia = data.getDate().toString().padStart(2, '0');
-let mes = (data.getMonth() + 1).toString().padStart(2, '0');
-let ano = data.getFullYear();
-let hora = data.getHours().toString().padStart(2, '0');
-let minuto = data.getMinutes().toString().padStart(2, '0');
-let segundo = data.getSeconds().toString().padStart(2, '0');
 
-let dataAtual = `${dia}/${mes}/${ano}`;
-let horaAtual = `${hora}:${minuto}:${segundo}`;
+setInterval(function(){
+    let data = new Date();
+    let hora = data.getHours().toString().padStart(2, '0');
+    let minuto = data.getMinutes().toString().padStart(2, '0');
+    let segundo = data.getSeconds().toString().padStart(2, '0');
+    document.getElementById('hora').innerHTML = `${hora}:${minuto}:${segundo}`;
+    }, 1000);
 //-----------------------------------------------------------------------------------
 
 for (let i = 0; i < db_paciente_normal.length; i++) {
@@ -87,9 +78,6 @@ function sNormal() {
         `${horaAtual}`)
     console.log(db_paciente_normal);
 
-    // Armazenamento local
-    localStorage.setItem("senhaNormal", senhaNormal);
-    localStorage.setItem("db_paciente_normal", JSON.stringify(db_paciente_normal));
 }
 
 // função de chamada de senha preferencial
@@ -114,11 +102,6 @@ function sPreferencial() {
         `${dataAtual}`, 
         `${horaAtual}`)
     console.log(db_paciente_pref);
-
-    // Armazenamento local
-    localStorage.setItem("senhaPref", senhaPreferencial);
-    localStorage.setItem("db_paciente_pref", JSON.stringify(db_paciente_pref));
-  
 }
 
 // função de vizualização de senhas
@@ -139,8 +122,8 @@ function mostrarSenha() {
 
 // funções de adição de pacientes ao banco de dados
 function db_normal (senha, nome, consultorio, tipo, data, hora) {
-    db_paciente_normal[nome] = {
-        senha: senha,
+    db_paciente_normal[senha] = {
+        nome: nome,
         consultorio: consultorio,
         tipo: tipo,
         data: data,
@@ -148,8 +131,8 @@ function db_normal (senha, nome, consultorio, tipo, data, hora) {
     }
 }
 function db_prefencial (senha, nome, consultorio, tipo, data, hora) {
-    db_paciente_pref[nome] = {
-        senha: senha,
+    db_paciente_pref[senha] = {
+        nome: nome,
         consultorio: consultorio,
         tipo: tipo,
         data: data,
