@@ -14,6 +14,16 @@ let db_pacientes = {db_paciente_normal, db_paciente_pref};
 
 //-----------------------------------------------------------------------------------
 // Data e hora
+    let data = new Date();
+    let dia = data.getDate().toString().padStart(2, '0');
+    let mes = (data.getMonth() + 1).toString().padStart(2, '0');
+    let ano = data.getFullYear();
+    let hora = data.getHours().toString().padStart(2, '0');
+    let minuto = data.getMinutes().toString().padStart(2, '0');
+    let segundo = data.getSeconds().toString().padStart(2, '0');
+
+    let dataAtual = `${dia}/${mes}/${ano}`;
+    let horaAtual = `${hora}:${minuto}:${segundo}`;
 
 setInterval(function(){
     let data = new Date();

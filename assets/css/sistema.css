@@ -14,48 +14,82 @@
 .final {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+    padding-left: 85%;
+    text-align: left;
+    padding-top: 1rem;
     background-color: transparent;
-    margin: 0;  
+    opacity: 70%;
+    
 }
-.relogio,
+.final > span {
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: .5rem;
+    border-radius: 10px;
+    border-bottom: 1px solid #070707;
+    box-shadow: 0 2px 5px #fff;
+
+    
+}
+
+
+
 .msg,
 .dot {
     background-color: transparent;
     font-size: 35px;
-    
     color: #fff;
-    
+    padding-left: 15px;
 }
 
 .caixa{
     height: 250px;
     width: 400px;
-    border-radius: 5px;
-    border-bottom: 1px solid #fff;
-    background-color: sienna;
+    border: 1px solid #fff;
+    background-color: rgb(102, 95, 92);
     font-size: 35px;
     padding-left: .5rem;
     color: #fff;
     font-weight: 400;
-    
-    
 }
+.layout {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+}
+.layout > h1, p {
+    background-color: transparent;
+}
+
 .font {
     font-size: 30px;
     background-color: transparent;
     font-weight: 400;
-   
 }
 
 .propaganda {
     width: 100vw;
-    height: 750px;
-    border-radius: 3px;
+    height: 754px;
     background-image: linear-gradient(to right top, #012677, #005bc5, #acc2e8 );
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-left: 2px;
+    border: 1px solid #fff;
+    border-left: none;
+}
+
+.Hname{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 60px;
+    font-weight: bolder;
+    padding: 0;
+    background-color: transparent;
+    font-style: unset;
 }
 .img {
     display: flex;
@@ -64,16 +98,9 @@
     left: 50%;
     height: 500px;
     width: 750px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgb(100, 78, 78);
 }
-
-.propaganda > h1, p {
-    color: #fff;
-    text-align: center;
-    background-color: transparent;  
-    font-weight: 400;
-    
-}
-
 
 .cadastro {
     text-align: center; 
