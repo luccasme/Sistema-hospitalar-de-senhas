@@ -2,15 +2,15 @@
     display: flex;
     justify-content:left;
     align-content: center;
-    margin: .2rem;
+   
 }
-
 .fullPainel {
   display: flex;
   flex-direction: column;
   justify-content: left;
+  border: 2px solid #000;
+ 
 }
-
 .final {
     display: flex;
     flex-direction: row;
@@ -18,8 +18,7 @@
     text-align: left;
     padding-top: 1rem;
     background-color: transparent;
-    opacity: 70%;
-    
+    opacity: 70%;   
 }
 .final > span {
     color: rgb(0, 0, 0);
@@ -28,13 +27,12 @@
     padding: .5rem;
     border-radius: 10px;
     border-bottom: 1px solid #070707;
-    box-shadow: 0 2px 5px #fff;
-
-    
+    box-shadow: 0 2px 5px #fff;   
 }
-
-
-
+.caixa > h2 {
+    font-size: 50px;
+    font-weight: 600;
+}
 .msg,
 .dot {
     background-color: transparent;
@@ -42,21 +40,22 @@
     color: #fff;
     padding-left: 15px;
 }
-
 .caixa{
-    height: 250px;
-    width: 400px;
-    border: 1px solid #fff;
-    background-color: rgb(102, 95, 92);
-    font-size: 35px;
+    height: 100%;
+    width: 500px;
+    background-color: rgb(205, 186, 247);
+    font-size: 40px;
     padding-left: .5rem;
-    color: #fff;
-    font-weight: 400;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    text-align: center;
 }
 .layout {
     background-color: transparent;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-content: center;
     text-align: center;
     color: #fff;
 }
@@ -72,14 +71,14 @@
 
 .propaganda {
     width: 100vw;
-    height: 754px;
+    height: 100vh;
     background-image: linear-gradient(to right top, #012677, #005bc5, #acc2e8 );
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-left: 2px;
-    border: 1px solid #fff;
-    border-left: none;
+
+ 
 }
 
 .Hname{
@@ -101,12 +100,10 @@
     border-radius: 5px;
     box-shadow: 0 0 3px rgb(100, 78, 78);
 }
-
 .cadastro {
     text-align: center; 
     padding: 0 0 1rem 0;
 }
-
 .name {
     margin: 0 0 .5rem 0;
     width: 400px;
@@ -120,13 +117,11 @@
     border:inherit 5px;
     margin: 5px;
 }
-
 .button {
     margin-bottom: 1rem;
     padding: 5px;
     text-align: center;
 }
-
 .newSenha {
     margin: 5px;
     padding: 1rem;
@@ -140,7 +135,6 @@
 	text-decoration:none;
 	text-shadow:1px 1px 10px #070707;
     font-weight: 400;
-    
 }
 
 .newSenha:hover {
@@ -148,6 +142,36 @@
 }
 
 .newSenha:active {
+	position: relative;
+	top:1px;
+}
+.consultorios {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.dispo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+    margin: 20px;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #0a4ea1;
+    cursor: pointer;
+}
+
+.dispo:hover {
+	background-color:#022551;
+}
+
+.dispo:active {
 	position: relative;
 	top:1px;
 }

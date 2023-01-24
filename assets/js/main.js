@@ -6,8 +6,8 @@ let audio = new Audio('./audio/senha.mp3');
 let senhas = document.getElementById('ultSenhas');
 let senhasChamadas = [];
 let consult = document.getElementById('consultorio');
-let consultorios = [];
-let db_paciente_normal = {};
+let consultorios = [1, 2, 3, 4, 5];
+let db_paciente_normal = localStorage.getItem("db_paciente_normal");
 let db_paciente_pref = {};
 let db_pacientes = {db_paciente_normal, db_paciente_pref};
 
@@ -41,10 +41,6 @@ for (let i = 0; i < db_paciente_pref.length; i++) {
     db_paciente_pref.push(i);  
 }
 
-for (let i = 1; i < 6; i++) {
-    consultorios.push(i);
-}
-
 if (!senhaNormal)
     senhaNormal = 0
 
@@ -74,7 +70,7 @@ function sNormal() {
     audio.play(); 
     mostrarSenha();
     if (consultorios.length > 0) {
-        consult.innerHTML = `${consultorios.shift()}`
+        consult.innerHTML = `${consultorios.shift()}`  
         
     } else {
         consult.innerHTML = `Consultórios ocupados!`
@@ -86,6 +82,7 @@ function sNormal() {
         `${ultSenha}`, 
         `${dataAtual}`, 
         `${horaAtual}`)
+         localStorage.setItem("db_paciente_normal", JSON.stringify(db_paciente_normal));
     console.log(db_paciente_normal);
 
 }
