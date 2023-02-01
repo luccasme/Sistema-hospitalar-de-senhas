@@ -25,6 +25,8 @@ let db_pacientes = {db_paciente_normal, db_paciente_pref};
     let dataAtual = `${dia}/${mes}/${ano}`;
     let horaAtual = `${hora}:${minuto}:${segundo}`;
 
+    document.getElementById("data").innerHTML = `${dataAtual}`;
+
 setInterval(function(){
     let data = new Date();
     let hora = data.getHours().toString().padStart(2, '0');
@@ -114,7 +116,7 @@ function sPreferencial() {
 // função de vizualização de senhas
 function mostrarSenha() {
     senhasChamadas.unshift(vSenha.innerHTML);
-    senhasChamadas = senhasChamadas.slice(0,5);
+    senhasChamadas = senhasChamadas.slice(0,4);
     document.getElementById('ultSenhas').innerHTML = senhasChamadas.join('<br>'); 
     
 

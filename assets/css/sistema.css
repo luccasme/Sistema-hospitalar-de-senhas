@@ -1,49 +1,52 @@
+
 .content {
     display: flex;
-    justify-content:left;
+    justify-content:right;
     align-content: center;
+    border-radius: 5px;
+
    
 }
 .painel {
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  border: 2px solid #000;
- 
+  justify-content: right;
 }
 .final {
-    display: flex;
-    flex-direction: row;
-    padding-left: 75%;
-    text-align: left;
-    padding-top: 2rem;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
     background-color: transparent;
-    opacity: 70%;   
+    justify-content: space-around;
 }
 .final > span {
     font-size: 70px;
     background-color: transparent;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
-    color: #fff
+    color: #fff;
+    padding: 2rem;
+    
 }
-
 .caixa{
     height: 100%;
-    width: 500px;
-    background-color: #c2c2c2;
+    width: 450px;
+    background-color: #acc2e8;
     font-size: 40px;
-    padding-left: .5rem;
+    text-shadow: 2px 2px 5px cadetblue;
     color: rgb(0, 0, 0);
     font-weight: 600;
     text-align: center;
-    border: 10px inset;
+    border: inset #fff;
+    border-radius: 15px;
 }
 .caixa > h2 {
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 600;
 }
-
+.caixa > hr {
+    color: #fff
+}
 .msg,
 .dot {
     background-color: transparent;
@@ -51,7 +54,6 @@
     color: #fff;
     padding-left: 15px;
 }
-
 .layout {
     background-color: transparent;
     display: flex;
@@ -74,22 +76,29 @@
 
 .propaganda {
     width: 100vw;
-    height: 100vh;
+    height: 100vh;''
     background-image: linear-gradient(to right top, #012677, #005bc5, #acc2e8 );
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
+    border: inset #fff;
 }
 
 .Hname{
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin: 2rem;
     font-size: 60px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
     padding: 0;
     background-color: transparent;
-    font-style: unset;
+    text-shadow: 2px 2px 4px #070707;
+}
+.msg {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px #070707;
 }
 
 .img {
