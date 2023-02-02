@@ -22,7 +22,7 @@ let db_pacientes = {db_paciente_normal, db_paciente_pref};
     let minuto = data.getMinutes().toString().padStart(2, '0');
     let segundo = data.getSeconds().toString().padStart(2, '0');
 
-    let dataAtual = `${dia}/${mes}/${ano}`;
+    let dataAtual = `${dia}.${mes}.${ano}`;
     let horaAtual = `${hora}:${minuto}:${segundo}`;
 
     document.getElementById("data").innerHTML = `${dataAtual}`;

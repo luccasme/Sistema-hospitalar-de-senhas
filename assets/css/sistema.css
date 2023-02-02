@@ -1,7 +1,7 @@
 
 .content {
     display: flex;
-    justify-content:right;
+    justify-content:center;
     align-content: center;
     border-radius: 5px;
 
@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-content: right;
+  margin: .5rem 0 .5rem 0;
 }
 .final {
     position: absolute;
@@ -26,23 +27,23 @@
     font-weight: bold;
     color: #fff;
     padding: 2rem;
-    
+    text-shadow: 2px 2px 5px black;
 }
 .caixa{
     height: 100%;
     width: 450px;
-    background-color: #acc2e8;
+    background-color: #1C1B22;
     font-size: 40px;
-    text-shadow: 2px 2px 5px cadetblue;
-    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-weight: 600;
     text-align: center;
-    border: inset #fff;
+    border: 2px double #fcfcfc;
     border-radius: 15px;
 }
 .caixa > h2 {
     font-size: 50px;
-    font-weight: 600;
+    font-weight: 500;
 }
 .caixa > hr {
     color: #fff
@@ -59,13 +60,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
-    text-align: center;
-    color: #fff;
+    align-self: center;
+    color: #fff
 }
 
 .layout > h1, p {
     background-color: transparent;
+}
+.layout > h1 > hr {
+    color: #fff;
 }
 
 .font {
@@ -75,20 +78,21 @@
 }
 
 .propaganda {
+    margin: .5rem 0 .5rem 0;
     width: 100vw;
-    height: 100vh;''
+    height: 100vh;
     background-image: linear-gradient(to right top, #012677, #005bc5, #acc2e8 );
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    border: inset #fff;
+    border: 2px double #fcfcfc;
 }
 
 .Hname{
-    margin: 2rem;
-    font-size: 60px;
+    margin-top: 2rem;
+    font-size: 70px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
     padding: 0;
@@ -96,14 +100,15 @@
     text-shadow: 2px 2px 4px #070707;
 }
 .msg {
+    margin-top: 3rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 500;
     text-shadow: 2px 2px 4px #070707;
 }
 
 .img {
-    height: 550px;
-    width: 750px;
+    margin-top: 3rem;
+    max-width: 600px;
     border-radius: 5px;
     box-shadow: 0 0 3px rgb(100, 78, 78);
 }
