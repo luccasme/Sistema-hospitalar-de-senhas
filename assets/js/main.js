@@ -1,3 +1,4 @@
+
 const vSenha = document.getElementById('senha');
 let senhaNormal = 0;
 let senhaPreferencial = 0;
@@ -6,10 +7,10 @@ let audio = new Audio('./audio/senha.mp3');
 let senhas = document.getElementById('ultSenhas');
 let senhasChamadas = [];
 let consult = document.getElementById('consultorio');
-let consultorios = [1, 2, 3, 4, 5];
-let db_paciente_normal = localStorage.getItem("db_paciente_normal");
-let db_paciente_pref = {};
-let db_pacientes = {db_paciente_normal, db_paciente_pref};
+let consultorios = {};
+var db_paciente_normal = {};
+var db_paciente_pref = {};
+var db_pacientes = {db_paciente_normal, db_paciente_pref};
 
 
 //-----------------------------------------------------------------------------------
@@ -35,6 +36,39 @@ setInterval(function(){
     document.getElementById('hora').innerHTML = `${hora}:${minuto}:${segundo}`;
     }, 1000);
 //-----------------------------------------------------------------------------------
+
+consultorios = {
+    consultorio1: true,
+    consultorio2: true,
+    consultorio3: true,
+    consultorio4: true,
+    consultorio5: true
+  };
+  
+  function alterarDisponibilidade(consultorio) {
+    consultorios[consultorio] = !consultorios[consultorio];
+    return consultorios[consultorio] ? "dispoível" : "indisponivel";
+  }
+    
+  
+  function chamarProximoConsultorio() {
+    for (let key in consultorios) {
+      if (consultorios[key] === true) {
+        document.getElementById("consultorio").innerHTML = key;
+        alterarDisponibilidade(key);
+        break;
+      }
+    }
+  }
+    document.getElementById("1").innerHTML = "Consultório 1: " + alterarDisponibilidade("consultorio1");
+    document.getElementById("2").innerHTML = "Consultório 2: " + alterarDisponibilidade("consultorio2");
+    document.getElementById("3").innerHTML = "Consultório 3: " + alterarDisponibilidade("consultorio3");
+    document.getElementById("4").innerHTML = "Consultório 4: " + alterarDisponibilidade("consultorio4");
+    document.getElementById("5").innerHTML = "Consultório 5: " + alterarDisponibilidade("consultorio5");
+
+    document.getElementById("newSenha").addEventListener("click", chamarProximoConsultorio);
+  
+/////////////////////////////////////////////////////////////////////////////////////////////
 
 for (let i = 0; i < db_paciente_normal.length; i++) {
     db_paciente_normal.push(i); 
@@ -71,12 +105,7 @@ function sNormal() {
     senhaNormal++;
     audio.play(); 
     mostrarSenha();
-    if (consultorios.length > 0) {
-        consult.innerHTML = `${consultorios.shift()}`  
-        
-    } else {
-        consult.innerHTML = `Consultórios ocupados!`
-    }
+    
     db_normal(
         `${senhaNormal}`, 
         `${name}`,
@@ -84,8 +113,11 @@ function sNormal() {
         `${ultSenha}`, 
         `${dataAtual}`, 
         `${horaAtual}`)
-         localStorage.setItem("db_paciente_normal", JSON.stringify(db_paciente_normal));
+        localStorage.setItem("db_paciente_normal", JSON.stringify(db_paciente_normal));
+        db_paciente_normal = JSON.parse(localStorage.getItem("db_paciente_normal"));
     console.log(db_paciente_normal);
+
+    alterarDisponibilidade();
 
 }
 
@@ -98,19 +130,18 @@ function sPreferencial() {
     audio.play()
     mostrarSenha();
 
-    if (consultorios.length > 0) {
-        consult.innerHTML = `${consultorios.shift()}`
-    } else {
-        consult.innerHTML = `Consultórios ocupados!`
-    }
     db_prefencial(
         `${senhaPreferencial}`,
         `${sPref}`, 
-        `${consult.innerHTML}`, 
+        `${consult}`, 
         `${ultSenha}`, 
         `${dataAtual}`, 
         `${horaAtual}`)
+         localStorage.setItem("db_paciente_pref", JSON.stringify(db_paciente_pref));
+         db_paciente_pref = JSON.parse(localStorage.getItem("db_paciente_pref"));
     console.log(db_paciente_pref);
+
+    alterarDisponibilidade();
 }
 
 // função de vizualização de senhas
