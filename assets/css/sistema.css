@@ -11,15 +11,18 @@
   justify-content: right;
   margin-bottom: 1rem;
   margin-right: .2rem;
-  
 }
 
 .final {
     position: absolute;
     bottom: 0;
     text-align: center;
-    background-color: transparent;
+    background: linear-gradient(to bottom left, #24ACF2, #1872A1, #104C6B);
     justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: 2px -2px 15px #070707;
+    margin-bottom: 2rem;
+
 }
 .final > span {
     font-size: 70px;
@@ -28,24 +31,24 @@
     font-weight: bold;
     color: #fff;
     padding: 2rem;
-    text-shadow: 2px 2px 10px #070707;
+    text-shadow: 2px 5px 15px #070707;
 }
 .final > hr {
     color: #fff;
     opacity: 50%;
 }
-.caixa{
+.caixa {
     height: 100%;
     width: 600px;
-    background-color:grey;
+    background: linear-gradient(to bottom left, #24ACF2, #1872A1, #104C6B);
     text-shadow: 2px 2px 5px rgb(0, 0, 0);
     color: rgb(255, 255, 255);
     font-weight: 600;
     text-align: center;
     border-radius: 15px;
-    margin:.2rem;
-    margin-left: .1rem;
-    box-shadow: 2px -2px 10px #070707;
+    margin-top: .5rem;
+    margin-left: .5rem;  
+    box-shadow: -2px -2px 20px #070707;
     font-size: 58px;
 }
 .caixa > h2  {
@@ -57,16 +60,10 @@
 .senha_ {
     margin-top: 1rem;
 }
-
 .caixa > hr {
     color: #fff;
 }
-.senha_nome {
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-}
+
 .msg,
 .dot {
     background-color: transparent;
@@ -82,14 +79,12 @@
     align-self: center;
     color: #fff
 }
-
 .layout > h1, p {
     background-color: transparent;
 }
 .layout > h1 > hr {
     color: #fff;
 }
-
 .font {
     font-size: 30px;
     background-color: transparent;
@@ -107,11 +102,10 @@
     font-weight: bold;
     color: #fff;
     padding: 1rem;
-    text-shadow: 2px 2px 4px #070707;
+    text-shadow: 2px 10px 20px #070707;
 }
 .aviso > hr {
     color: #fff;
-    margin: 1rem;
     opacity: 50%;
 }
 .propaganda {
@@ -122,14 +116,16 @@
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    margin: .2rem;
+    margin-top: .5rem;
+    margin-right: .5rem;
     margin-bottom: 1rem;
+    margin-left: .5rem;
     text-shadow: -2px 2px 4px #070707;
-    background: linear-gradient(to bottom left, #808080, #AAAAAA, #E2E2E2);
-    box-shadow: 2px -2px 10px #070707;
-
+    background-image: url('/assets/img/add.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 2px -2px 20px #070707;
 }
-
 .Hname{
     margin-top: 2rem;
     font-size: 90px;
@@ -137,7 +133,7 @@
     font-weight: bolder;
     padding: 0;
     background-color: transparent;
-    text-shadow: 2px 2px 4px #070707;
+    text-shadow: 2px 10px 20px #070707;
 }
 .msg {
     margin-top: 3rem;
@@ -145,19 +141,16 @@
     font-weight: 500;
     text-shadow: 2px 2px 4px #070707;
 }
-
 .img {
     margin-top: 3rem;
     max-width: 600px;
     border-radius: 5px;
     box-shadow: 0 0 3px rgb(100, 78, 78);
 }
-
 .cadastro {
     text-align: center; 
     padding: 0 0 1rem 0;
 }
-
 .name {
     margin: 0 0 .5rem 0;
     width: 400px;
@@ -171,13 +164,11 @@
     border:inherit 5px;
     margin: 5px;
 }
-
 .button {
     margin-bottom: 1rem;
     padding: 5px;
     text-align: center;
 }
-
 .newSenha {
     margin: 5px;
     padding: 1rem;
@@ -185,18 +176,15 @@
 	border-radius:10px;
 	cursor:pointer;
 	color:#ffffff;
-	
 	font-size:19px;
 	padding:12px 37px;
 	text-decoration:none;
 	text-shadow:1px 1px 10px #070707;
     font-weight: 400;
 }
-
 .newSenha:hover {
 	background-color:#022551;
 }
-
 .newSenha:active {
 	position: relative;
 	top:1px;
@@ -204,9 +192,6 @@
 .consultorios > p {
     margin-top: .5rem;
 }
-
-
-
 .dispo {
     display: flex;
     justify-content: center;
@@ -222,11 +207,9 @@
     background-color: #0a4ea1;
     cursor: pointer;
 }
-
 .dispo:hover {
 	background-color:#022551;
 }
-
 .dispo:active {
 	position: relative;
 	top:1px;

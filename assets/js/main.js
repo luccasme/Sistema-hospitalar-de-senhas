@@ -44,7 +44,7 @@
   
   function alterarDisponibilidade(consultorio) {
     consultorios[consultorio] = !consultorios[consultorio];
-    let estado =consultorios[consultorio] ? "Dispoível ⬤" : "Indisponivel ⬤";
+    let estado = consultorios[consultorio] ? "Dispoível ⬤" : "Indisponivel ⬤";
     let color = consultorios[consultorio] ? "green" : "red";
     document.getElementById(`${consultorio}`).style.color = color;
     return estado;
