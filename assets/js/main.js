@@ -12,8 +12,9 @@
     var db_pacientes = {db_paciente_normal, db_paciente_pref};
 
 
-//-----------------------------------------------------------------------------------
-// Data e hora
+
+// DATA E HORA
+
         let data = new Date();
         let dia = data.getDate().toString().padStart(2, '0');
         let mes = (data.getMonth() + 1).toString().padStart(2, '0');
@@ -32,7 +33,9 @@
         let segundo = data.getSeconds().toString().padStart(2, '0');
         document.getElementById('hora').innerHTML = `${hora}:${minuto}:${segundo}`;
         }, 1000);
-//----------------------------------------------------------------------------------------------------------------------------
+
+
+// CONSULTÓRIOS    
 
     let consultorios = {
     consultorio1:true,
@@ -67,10 +70,10 @@
         document.getElementById(`${i}`).innerHTML = `Consultório ${i}: ${disponibilidade}`
         
     }
- //-----------------------------------------------------------------------------------------------------------------------------
+
 
     
-//----------------------------------------------------------------------------------------------------------------------------
+
 
     for (let i = 0; i < db_paciente_normal.length; i++) {
         db_paciente_normal.push(i); 
@@ -97,7 +100,8 @@
     })
 
 
-// função de chamada de senhas normais
+// CHAMADA DE SENHAS NORMAIS
+
     function sNormal() {
         const name = document.getElementById('Name').value;
         document.getElementById('nome').innerHTML = `${name}`;
@@ -111,7 +115,7 @@
         db_normal(
             `${senhaNormal}`, 
             `${name}`,
-            `${consult.innerHTML}`, 
+            `${consult.innerText}`, 
             `${ultSenha}`, 
             `${dataAtual}`, 
             `${horaAtual}`)
@@ -123,7 +127,8 @@
 
     }
 
-    // função de chamada de senha preferencial
+// CHAMADA DE SENHAS PREFERENCIAIS
+
     function sPreferencial() {
         const sPref = document.getElementById('Name').value;
         document.getElementById('nome').innerHTML = `${sPref}`;
@@ -147,7 +152,8 @@
 
 }
 
-// função de vizualização de senhas
+// VISUALIZAÇÃO DE SENHAS
+
     function mostrarSenha() {
         senhasChamadas.unshift(vSenha.innerHTML);
         senhasChamadas = senhasChamadas.slice(0,4);
@@ -163,7 +169,7 @@
     }
 
 
-    // funções de adição de pacientes ao banco de dados
+// ADIÇÃO DE DADOS AO BD
     function db_normal (senha, nome, consultorio, tipo, data, hora) {
         db_paciente_normal[senha] = {
             nome: nome,
@@ -183,7 +189,7 @@
         }
     }
 
-// consultar pacientes pelo número da senha
+// CONSULTAR PACIENTES PELO NÚMERO DA SENHA
     function get_db_normal() {
         return db_paciente_normal;
     }
